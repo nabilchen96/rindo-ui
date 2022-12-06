@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="Description" content="Enter your description here" />
+
+    <meta name="theme-color" content="#414f57" />
+    <!-- Mendeklarasikan ikon untuk iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Nama Situs" />
+    <link rel="apple-touch-icon" href="folder/rindo_logo.png" />
+    <!-- Mendeklarasikan ikon untuk Windows -->
+    <meta name="msapplication-TileImage" content="folder/rindo_logo.png" />
+    <meta name="msapplication-TileColor" content="#000000" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
@@ -14,6 +25,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="folder/assets/css/style.css" />
+    <link rel="shortcut icon" href="folder/rindo_logo.png" />
+    <link rel="manifest" href="/manifest.json" />
+
     <title>Title</title>
     <style>
       .bg-gradient-primary {
@@ -87,10 +101,7 @@
               >
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                style="margin-right: 20px"
-                href="#listberita"
+              <a class="nav-link" style="margin-right: 20px" href="#listberita"
                 >Berita</a
               >
             </li>
@@ -109,7 +120,9 @@
               </ul>
             </div>
             <li class="nav-item">
-              <a class="nav-link" style="margin-right: 20px" href="#kontak">Kontak</a>
+              <a class="nav-link" style="margin-right: 20px" href="#kontak"
+                >Kontak</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" style="margin-right: 20px" href="#gallery"
@@ -692,7 +705,7 @@
       <br /><br /><br /><br /><br /><br />
     </div>
     <div
-        id="kontak"
+      id="kontak"
       style="
         padding-bottom: 50px;
         padding-top: 50px;
@@ -807,11 +820,7 @@
                 &nbsp; Facebook
               </p>
             </a>
-            <a
-              target="_blank"
-              style="text-decoration: none"
-              href="#"
-            >
+            <a target="_blank" style="text-decoration: none" href="#">
               <p class="m-0 pt-1 pb-2 text-muted">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -942,6 +951,14 @@
         ct.parentNode.insertBefore(nt, ct);
       }
       add_chatinline();
+    </script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
+        });
+      }
     </script>
   </body>
 </html>
